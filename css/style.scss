@@ -1,0 +1,90 @@
+@import "normalize";
+@import "mixins";
+@import url("http://fonts.googleapis.com/css?family=Miniver");
+
+$text-color: #444;
+$hover-color: #C70;
+$link-color: #07C;
+$link-visited-color: #4A6B82;
+
+$line-height: 25px;
+$font-size: 16px;
+
+html, body {
+   height: 100%;
+   margin: 0px;
+   overflow: hidden;
+}
+
+body {
+   position: relative;
+   font-family: Georgia, serif;
+   font-size: $font-size;
+   line-height: $line-height;
+   color: $text-color;
+   background: url("img/paper-texture-warm.gif") repeat top left #ddd fixed;
+}
+
+hgroup {
+   padding: 0px $line-height;
+}
+
+h1 {
+   font-family: 'Miniver', cursive;
+   color: $link-color;
+   font-size: 3em;
+   line-height: $line-height * 2;
+   margin: 0px;
+}
+
+h2 {
+   margin-top: 0px;
+   margin-bottom: $line-height;
+   font-size: 0.8em;
+   line-height: $line-height;
+   font-style: italic;
+
+}
+
+a {
+   color: $link-color;
+   text-decoration: none;
+
+   &:visited {
+      color: $link-visited-color;
+   }
+}
+
+.hidden {
+   display: none;
+}
+
+.container {
+   position: relative;   
+   width: 50%;
+   max-width: 500px;   
+   min-width: 400px;
+   margin: 3em auto;
+   text-align: left;
+   z-index: 10;   
+
+}
+
+.me {
+   position: absolute;
+   right: -120px;
+   bottom: -10px;
+   z-index: 9;
+}
+
+ul {
+   position: relative;
+   list-style: none;
+   padding: ($line-height*1.2) $line-height $line-height $line-height;
+   margin: 0;
+
+   background: #fff;
+   @include border-radius(1em);
+   @include box-shadow(0px 1px 3px rgba(#000, 0.2));
+   @include lines(25px, lighten($link-color, 55%));
+}
